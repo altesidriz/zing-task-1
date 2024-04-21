@@ -1,25 +1,19 @@
 'use client';
+
 import { useRef } from 'react';
 import Image from 'next/legacy/image';
 
 import Banner from '@/components/banner';
+import Gallery from '@/components/gallery';
 import Suggestions from '@/components/suggestions';
 import Partners from '@/components/partners';
+import { singers } from '@/utils/singerData';
+import { images } from '@/utils/currentDestImages';
 
 
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ApartmentIcon from '@mui/icons-material/Apartment';
-import Footer from '@/components/footer';
-
-const images = [
-    'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDI%3D',
-    'https://images.unsplash.com/photo-1546412414-e1885259563a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/flagged/photo-1559717201-fbb671ff56b7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1459787915554-b34915863013?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'https://images.unsplash.com/photo-1628859017536-c2f1d69f3c84?q=80&w=2137&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
-];
 
 const Homepage = () => {
     const slideLeft = () => {
@@ -33,7 +27,7 @@ const Homepage = () => {
     return (
         <>
             <Banner />
-            <div className="py-5 flex flex-row content-center justify-center">
+            <div className=" pt-10 px-10 flex flex-row content-center justify-center">
                 {/* LEFT-CONTENT */}
                 <div className="left-content w-2/4">
                     {/* TEXT CONTAINER */}
@@ -50,30 +44,7 @@ const Homepage = () => {
                             inventore dolor. Esse facilis quis, et placeat quos dolore temporibus voluptates.</p>
                     </div>
                     {/* GALLERY */}
-                    <div className="px-3 h-96 size-full flex flex-col gap-3 justify-center items-center">
-                        <div className="relative grid grid-cols-[2fr_repeat(2,1fr)] grid-rows-[1fr] gap-x-2.5 gap-y-2.5">
-                            <div className="relative bg-white h-32 w-full ">
-                                <Image src="/licensed-image.jpg" alt="" layout="fill" className="object-cover" />
-                            </div>
-                            <div className="relative bg-white h-32 w-32">
-                                <Image src="/licensed-image.jpg" alt="" layout="fill" className="object-cover" />
-                            </div>
-                            <div className="relative bg-white h-32 w-32">
-                                <Image src="/licensed-image.jpg" alt="" layout="fill" className="object-cover" />
-                            </div>
-                        </div>
-                        <div className="relative grid grid-cols-[repeat(2,1fr)_2fr] grid-rows-[1fr] gap-x-2.5 gap-y-2.5">
-                            <div className="relative bg-white h-32 w-32">
-                                <Image src="/licensed-image.jpg" alt="" layout="fill" className="object-cover" />
-                            </div>
-                            <div className="relative bg-white h-32 w-32">
-                                <Image src="/licensed-image.jpg" alt="" layout="fill" className="object-cover" />
-                            </div>
-                            <div className="relative bg-white h-32 w-full">
-                                <Image src="/licensed-image.jpg" alt="" layout="fill" className="object-cover" />
-                            </div>
-                        </div>
-                    </div>
+                    <Gallery />
                     {/* TABLE */}
                     <div className="w-full pl-2 flex flex-row gap-3">
                         {/* first column */}
@@ -95,15 +66,17 @@ const Homepage = () => {
                     </div>
                     {/* SINGERS */}
                     <div className="w-full pt-16 pl-4 flex gap-2">
-                        <div className="flex flex-col items-center text-sm gap-1">
-                            <div className="relative w-32 h-32 border">
-                                <Image src="/Eminem.jpeg" alt="eminem" layout="fill" className="object-cover" />
+                        {singers.map((singer) => (
+                            <div key={singer.name} className="flex flex-col items-center text-sm gap-1">
+                                <div className="relative w-32 h-32 border">
+                                    <Image src={singer.url} alt="eminem" layout="fill" className="object-cover" />
+                                </div>
+                                <span>{singer.name}</span>
                             </div>
-                            <span>Eminem</span>
-                        </div>
+                        ))}
                     </div>
                     {/* HOTELS */}
-                    <div id="hotel" className="ml-4 pl-2 pt-10 leading-10 w-full flex flex-col border-b-2 border-b-gray-300">
+                    <div id="hotel" className="ml-4 pl-2 py-5 leading-10 w-full flex flex-col border-b-2 border-b-gray-300">
                         <h2 className="text-xl pb-4">Хотели</h2>
                         <div className="flex gap-4 pb-4">
                             <ApartmentIcon className="text-red-600"></ApartmentIcon>
@@ -111,39 +84,31 @@ const Homepage = () => {
                         </div>
                         <p className=" text-sm pb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam aperiam reiciendis ipsum quo soluta necessitatibus sed magnam expedita! Ea distinctio rem quod modi velit laudantium!</p>
                         <p className=" text-sm pb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam aperiam reiciendis ipsum quo soluta necessitatibus sed magnam expedita! Ea distinctio rem quod modi velit laudantium!</p>
-                        <div className="relative h-40 flex items-center">
+                        <div className="relative h-1/2 flex items-center">
                             <NavigateBeforeIcon className="opacity-50 cursor-pointer hover:opacity-100" onClick={slideLeft}></NavigateBeforeIcon>
-                            <div id="slider" className="w-full h-fit overflow-x-scroll scroll whitespace-nowrap scroll-smooth hide-scrollbar">
-                                <div className="p-2 w-[220px] inline-block cursor-pointer hover:scale-105 ease-in-out duration-200">
-                                    <Image src="/licensed-image.jpg" width={500} height={500} layout="responsive" alt="/" className="object-contain" />
+                            <div id="slider" className="w-full h-full overflow-x-scroll scroll whitespace-nowrap scroll-smooth hide-scrollbar">
+                                {images.map((img,index)=>(
+                                <div key={index} className="p-2  w-[220px] inline-block cursor-pointer hover:scale-105 ease-in-out duration-200">
+                                    <Image src={img} width={500} height={500} layout="responsive" alt="/" className="object-cover" />
                                 </div>
-                                <div className="p-2 w-[220px] inline-block cursor-pointer hover:scale-105 ease-in-out duration-200">
-                                    <Image src="/licensed-image.jpg" width={500} height={500} layout="responsive" alt="/" className="object-contain" />
-                                </div>
-                                <div className="p-2 w-[220px] inline-block cursor-pointer hover:scale-105 ease-in-out duration-200">
-                                    <Image src="/licensed-image.jpg" width={500} height={500} layout="responsive" alt="/" className="object-contain" />
-                                </div>
-                                <div className="p-2 w-[220px] inline-block cursor-pointer hover:scale-105 ease-in-out duration-200">
-                                    <Image src="/licensed-image.jpg" width={500} height={500} layout="responsive" alt="/" className="object-contain" />
-                                </div>
-                                <div className="p-2 w-[220px] inline-block cursor-pointer hover:scale-105 ease-in-out duration-200">
-                                    <Image src="/licensed-image.jpg" width={500} height={500} layout="responsive" alt="/" className="object-contain" />
-                                </div>
+                                ))}
                             </div>
                             <NavigateNextIcon className="opacity-50 cursor-pointer hover:opacity-100" onClick={slideRight}></NavigateNextIcon>
                         </div>
                     </div>
                     {/* CUSTOMER REVIEWS */}
                     <div className="ml-4 flex flex-col w-full h-full gap-5">
-                        <h2 className="text-lg pt-4">Отзиви от клиенти</h2>
+                        <h2 className="text-xl pt-8">Отзиви от клиенти</h2>
                         <div id="card-review" className="flex flex-row items-center justify-around gap-2  text-sm">
-                            <div id="card" className="bg-gray-100 p-2 rounded-lg">
+                        {/* This part can be reviewed as a componenet also*/}
+                            <div id="card" className="bg-gray-100 p-8 pt-4 rounded-lg text-sm">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, eaque. Cumque hic nostrum amet, animi provident fugiat dolor reprehenderit unde?</p>
                             </div>
-                            <div id="card" className="bg-gray-100 p-2 rounded-lg">
+                        {/* This part can be reviewed as a componenet also*/}
+                            <div id="card" className="bg-gray-100 p-8 pt-4 rounded-lg">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, eaque. Cumque hic nostrum amet, animi provident fugiat dolor reprehenderit unde?</p>
                             </div>
-                            <div id="card" className="bg-gray-100 p-2 rounded-lg">
+                            <div id="card" className="bg-gray-100 p-8 pt-4 rounded-lg">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, eaque. Cumque hic nostrum amet, animi provident fugiat dolor reprehenderit unde?</p>
                             </div>
                         </div>
@@ -156,7 +121,6 @@ const Homepage = () => {
             </div>
             <Suggestions />
             <Partners />
-            <Footer />
         </>
     );
 };
