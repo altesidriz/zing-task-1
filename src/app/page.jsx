@@ -1,16 +1,16 @@
 'use client';
-import { useRef } from "react";
-import Image from "next/legacy/image";
+import { useRef } from 'react';
+import Image from 'next/legacy/image';
 
-import Banner from "@/components/banner";
-import Suggestions from "@/components/suggestions";
-import Partners from "@/components/partners";
+import Banner from '@/components/banner';
+import Suggestions from '@/components/suggestions';
+import Partners from '@/components/partners';
 
 
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ApartmentIcon from '@mui/icons-material/Apartment';
-import Footer from "@/components/footer";
+import Footer from '@/components/footer';
 
 const images = [
     'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZHViYWl8ZW58MHx8MHx8fDI%3D',

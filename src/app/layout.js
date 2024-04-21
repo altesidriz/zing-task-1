@@ -15,12 +15,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <AppRouterCacheProvider>
-        <div className="flex justify-center">
-          <div className="w-5/6 bg-amber-100">
             <Navbar />
             {children}
-          </div>
-        </div>
         </AppRouterCacheProvider>
       </body>
     </html>
