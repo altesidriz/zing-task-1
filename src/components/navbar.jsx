@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -11,14 +11,14 @@ const links = [
 const Navbar = () => {
 
   return (
-    <div className='h-55 flex justify-around items-center '>
+    <div className='py-2 h-full flex justify-around items-center '>
       {/* LOGO + BUTTON */}
-      <div className="w-1/3 h-full flex justify-end items-center bg-blue-300">
+      <div className="w-1/3 h-full pl-20 flex justify-center gap-10 items-center">
         <div className="">
-          <button className="w-5 h-8 flex-col justify-between">
-            <div className="w-10 h-1 bg-black rounded"></div>
-            <div className="w-10 h-1 bg-black rounded"></div>
-            <div className="w-10 h-1 bg-black rounded"></div>
+          <button className="flex w-full h-full border-2 flex-col gap-1 items-center border-none">
+            <div className="w-8 h-[3px] bg-black rounded"></div>
+            <div className="w-8 h-[3px] bg-black rounded"></div>
+            <div className="w-8 h-[3px] bg-black rounded"></div>
           </button>
         </div>
         <div className="">
@@ -28,9 +28,9 @@ const Navbar = () => {
         </div>
       </div>
       {/* MENU LIST */}
-      <div className="w-2/3 h-full flex justify-center items-center gap-x-5 bg-red-300">
+      <div className="pr-24 w-full h-full flex justify-end items-center gap-10 text-sm">
       {links.map((link) => (
-          <Link className="rounded p-1 text-xs" href={link.url} key={link.title}>{link.title}</Link>
+          <Link className="h-full rounded hover:text-red-600" href={link.url} key={link.title}>{link.title}</Link>
         ))}
       </div>
     </div>

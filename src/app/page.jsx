@@ -14,6 +14,7 @@ import { images } from '@/utils/currentDestImages';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import ApartmentIcon from '@mui/icons-material/Apartment';
+import Schedule from '@/components/schedule';
 
 const Homepage = () => {
     const slideLeft = () => {
@@ -27,11 +28,11 @@ const Homepage = () => {
     return (
         <>
             <Banner />
-            <div className=" pt-10 px-10 flex flex-row content-center justify-center">
+            <div className="relative pt-20 px-10 flex flex-row gap-10 content-center justify-center">
                 {/* LEFT-CONTENT */}
-                <div className="left-content w-2/4">
+                <div className="left-content w-3/5">
                     {/* TEXT CONTAINER */}
-                    <div className="px-3 text-2xl leading-8">
+                    <div className="px-3 pt-4 text-2xl leading-8">
                         <h2>За събитието</h2>
                         <p className="text-sm py-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis quis perferendis sed doloribus delectus
                             repellat soluta dicta aperiam cumque! Ipsum similique labore dolores inventore modi aperiam? Officia optio
@@ -117,6 +118,7 @@ const Homepage = () => {
                 </div>
                 {/* RIGHT CONTENT */}
                 <div className="right-content w-2/4">
+                    <Schedule />
                 </div>
             </div>
             <Suggestions />
