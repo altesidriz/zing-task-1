@@ -13,7 +13,7 @@ const Banner = () => {
             </div>
             <div className="flex flex-col w-5/6 absolute top-10 left-50 items-center gap-8 text-white text-2xl">
                 <div className="text-center leading-none text-3xl">
-                    <h1 className="px-0 pb-10">Арабска приказка в Дубай</h1>
+                    <h1 className="px-0 pb-10">Арабска приказка в Йордания</h1>
                     <span className="border-2 border-white text-sm px-1 py-3">11-15 Март</span>
                 </div>
                 <div className="hidden w-1/2 md:flex flex-row align-middle justify-around">

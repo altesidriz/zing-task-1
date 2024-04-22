@@ -6,24 +6,24 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 
 const Footer = () => {
     return (
-        <div className="h-96 w-full pt-4 flex flex-col bg-[#262626]">
+        <div className="h-min w-full pt-4 flex flex-col bg-[#262626]">
             {/* SEARCH BAR */}
-            <div className="h-1/3 border-b-2 border-b-gray-200">
-                <div className="flex flex-row justify-around text-white">
-                    <div className="max-w-xs font-extrabold text-lg">
+            <div className="h-1/3 p-2 border-b-2 border-b-gray-200">
+                <div className="flex flex-col items-center gap-10 justify-around md:flex-row text-white">
+                    <div className="max-w-xs font-bold text-lg">
                         <p>Отстъпки и специални предложения налични само на имейл</p>
                     </div>
                     <div className="w-1/2 flex flex-col gap-3">
                         <div className="flex">
-                            <input type="email" className="h-10 w-2/3 pl-3 text-sm text-black font-light focus:outline-none" placeholder="Въведете вашия имейл..." />
-                            <button className="bg-red-700 h-10 w-1/3 hover:bg-red-500">Абонирай се</button>
+                            <input type="email" className=" hidden md:inline-block h-10 w-2/3 pl-3 text-sm text-black font-light focus:outline-none" placeholder="Въведете вашия имейл..." />
+                            <button className="bg-red-700 w-max p-5 md:h-10 md:w-1/3 md:p-0 hover:bg-red-500">Абонирай се</button>
                         </div>
                         <p className="text-xs font-light">Всеки месец ще получаваш първи най-добрите ни оферти.</p>
                     </div>
                 </div>
             </div>
             {/* CONTACTS */}
-            <div className="flex flex-row gap-10 p-6 items-start justify-center text-white">
+            <div className="flex flex-col items-center md:flex-row gap-10 p-6 justify-center text-white">
                 {/* LOGO COLUMN */}
                 <div className="flex flex-col gap-4 items-center">
                     <Image src="/logo.png" alt="logo" width={100} height={50} />
