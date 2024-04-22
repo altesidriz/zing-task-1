@@ -75,7 +75,7 @@ const Homepage = () => {
                                 <span>{singer.name}</span>
                             </div>
                         ))}
-                    </div> md
+                    </div>
                     {/* HOTELS */}
                     <div id="hotel" className="ml-4 pl-2 py-5 leading-10 w-full flex flex-col border-b-2 border-b-gray-300">
                         <h2 className="text-xl pb-4">Хотели</h2>
