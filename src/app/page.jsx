@@ -66,7 +66,7 @@ const Homepage = () => {
                         </div>
                     </div>
                     {/* SINGERS */}
-                    <div className="overflow-scroll md:w-full pt-16 pl-4 flex gap-2">
+                    <div className="overflow-scroll md:w-full h-full pt-16 pl-4 flex gap-2">
                         {singers.map((singer) => (
                             <div key={singer.name} className="flex flex-col items-center text-sm gap-1">
                                 <div className="relative w-32 h-32 border">
