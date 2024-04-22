@@ -9,7 +9,7 @@ import ShareLocationIcon from '@mui/icons-material/ShareLocation';
 const Suggestions = () => {
     return (
         <>
-            <div className='px-12 pt-10 h-max w-full bg-[#fafafa]'>
+            <div className='px-12 pt-10 h-full w-full bg-[#fafafa]'>
                 <h2 className="pb-6 text-xl">Още предложения</h2>
                 <div className="h-full flex flex-col md:flex-row w-full gap-5 justify-start items-start">
                     {holiday.map((h)=>(

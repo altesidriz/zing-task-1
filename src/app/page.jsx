@@ -66,7 +66,7 @@ const Homepage = () => {
                         </div>
                     </div>
                     {/* SINGERS */}
-                    <div className="overflow-scroll hide-scrollbar md:w-full h-full pt-16 pl-4 flex gap-2">
+                    <div className="overflow-scroll hide-scrollbar md:w-min h-min pt-16 pl-4 flex gap-2">
                         {singers.map((singer) => (
                             <div key={singer.name} className="flex flex-col items-center text-sm gap-1">
                                 <div className="relative w-32 h-32 border">
@@ -75,7 +75,7 @@ const Homepage = () => {
                                 <span>{singer.name}</span>
                             </div>
                         ))}
-                    </div>
+                    </div> md
                     {/* HOTELS */}
                     <div id="hotel" className="ml-4 pl-2 py-5 leading-10 w-full flex flex-col border-b-2 border-b-gray-300">
                         <h2 className="text-xl pb-4">Хотели</h2>
@@ -98,7 +98,7 @@ const Homepage = () => {
                         </div>
                     </div>
                     {/* CUSTOMER REVIEWS */}
-                    <div className="ml-4 flex flex-col w-full h-full gap-5">
+                    <div className="ml-4 flex flex-col w-full h-max gap-5">
                         <h2 className="text-xl pt-8">Отзиви от клиенти</h2>
                         <div id="card-review" className="flex flex-row items-center justify-around gap-2 text-sm overflow-scroll hide-scrollbar">
                         {/* This part can be reviewed as a componenet also*/}
