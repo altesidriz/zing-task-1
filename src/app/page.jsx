@@ -28,9 +28,9 @@ const Homepage = () => {
     return (
         <>
             <Banner />
-            <div className="relative pt-5 px-10 flex flex-row gap-10 content-center justify-center md:pt-20">
+            <div className="relative pb-30 pt-5 px-10 flex flex-row gap-36 content-center justify-center md:pt-20">
                 {/* LEFT-CONTENT */}
-                <div className="left-content w-full md:w-3/5">
+                <div className="left-content md:w-3/5">
                     {/* TEXT CONTAINER */}
                     <div className="px-3 pt-4 text-2xl leading-8">
                         <h2>За събитието</h2>
@@ -98,7 +98,7 @@ const Homepage = () => {
                         </div>
                     </div>
                     {/* CUSTOMER REVIEWS */}
-                    <div className="ml-4 flex flex-col w-full h-max gap-5">
+                    <div className="ml-4 pb-10 flex flex-col w-full h-max gap-5">
                         <h2 className="text-xl pt-8">Отзиви от клиенти</h2>
                         <div id="card-review" className="flex flex-row items-center justify-around gap-2 text-sm overflow-scroll hide-scrollbar">
                         {/* This part can be reviewed as a componenet also*/}
