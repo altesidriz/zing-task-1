@@ -98,7 +98,7 @@ const Homepage = () => {
                         </div>
                     </div>
                     {/* CUSTOMER REVIEWS */}
-                    <div className="ml-4 flex flex-col w-full h-max gap-5">
+                    <div className="hidden ml-4 md:flex flex-col w-full h-max gap-5">
                         <h2 className="text-xl pt-8">Отзиви от клиенти</h2>
                         <div id="card-review" className="flex flex-row items-center justify-around gap-2 text-sm overflow-scroll hide-scrollbar">
                         {/* This part can be reviewed as a componenet also*/}
