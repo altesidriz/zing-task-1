@@ -28,9 +28,9 @@ const Homepage = () => {
     return (
         <>
             <Banner />
-            <div className="relative pt-20 px-10 flex flex-row gap-10 content-center justify-center">
+            <div className="relative pt-5 px-10 flex flex-row gap-10 content-center justify-center md:pt-20">
                 {/* LEFT-CONTENT */}
-                <div className="left-content w-3/5">
+                <div className="left-content w-full md:w-3/5">
                     {/* TEXT CONTAINER */}
                     <div className="px-3 pt-4 text-2xl leading-8">
                         <h2>За събитието</h2>
@@ -66,7 +66,7 @@ const Homepage = () => {
                         </div>
                     </div>
                     {/* SINGERS */}
-                    <div className="w-full pt-16 pl-4 flex gap-2">
+                    <div className="overflow-scroll md:w-full pt-16 pl-4 flex gap-2">
                         {singers.map((singer) => (
                             <div key={singer.name} className="flex flex-col items-center text-sm gap-1">
                                 <div className="relative w-32 h-32 border">
@@ -100,7 +100,7 @@ const Homepage = () => {
                     {/* CUSTOMER REVIEWS */}
                     <div className="ml-4 flex flex-col w-full h-full gap-5">
                         <h2 className="text-xl pt-8">Отзиви от клиенти</h2>
-                        <div id="card-review" className="flex flex-row items-center justify-around gap-2  text-sm">
+                        <div id="card-review" className="flex flex-row items-center justify-around gap-2 text-sm overflow-scroll">
                         {/* This part can be reviewed as a componenet also*/}
                             <div id="card" className="bg-gray-100 p-8 pt-4 rounded-lg text-sm">
                                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, eaque. Cumque hic nostrum amet, animi provident fugiat dolor reprehenderit unde?</p>
@@ -117,7 +117,7 @@ const Homepage = () => {
                     {/* MORE SUGGESTIONS */}
                 </div>
                 {/* RIGHT CONTENT */}
-                <div className="right-content w-2/4">
+                <div className="right-content hidden md:block w-2/4">
                     <Schedule />
                 </div>
             </div>
