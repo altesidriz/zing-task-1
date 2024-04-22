@@ -11,7 +11,7 @@ const Suggestions = () => {
         <>
             <div className='px-12 pt-10 h-max w-full bg-[#fafafa]'>
                 <h2 className="pb-6 text-xl">Още предложения</h2>
-                <div className="h-full flex flex-col md:flex-row flex-nowrap gap-5 justify-start items-start">
+                <div className="h-full flex flex-col md:flex-row w-full gap-5 justify-start items-start">
                     {holiday.map((h)=>(
                     <div key={h.id} id="card" className="h-[400px] w-auto flex flex-col justify-around text-gray-400 bg-white hover:scale-105 ease-in-out duration-200 cursor-pointer">
                         <div id="image" className="w-fill h-max">
