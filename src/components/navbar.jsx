@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-
+import { motion } from "framer-motion";
 const links = [
   { url: '/holidays', title: 'Почивки и екскурзии' },
   { url: '/hotels', title: 'Хотели' },
@@ -14,16 +14,60 @@ const links = [
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
+  const topLine = {
+    closed: {
+      rotate: 0,
+    },
+    opened: {
+      rotate: 45,
+      backgroundColor: "rgb(255,255,255)",
+    },
+  };
+  const centerLine = {
+    closed: {
+      opacity: 1,
+    },
+    opened: {
+      opacity: 0,
+    },
+  };
+
+  const bottomLine = {
+    closed: {
+      rotate: 0,
+    },
+    opened: {
+      rotate: -45,
+      backgroundColor: "rgb(255,255,255)",
+    },
+  };
+
+
   return (
     <div className='py-2 h-20 flex justify-around items-center sm:py-0'>
       {/* LOGO + BUTTON */}
       <div className="w-full flex justify-start h-max gap-10 items-center md:w-1/2 pl-20">
         <div className="flex items-center justify-center">
-          <button onClick={()=>setOpen(!open)} className="w-full h-full border-2 flex flex-col gap-1 border-none z-20 relative md:hidden">
-            <div className="w-8 h-[3px] bg-black rounded"></div>
-            <div className="w-8 h-[3px] bg-black rounded"></div>
-            <div className="w-8 h-[3px] bg-black rounded"></div>
-          </button>
+          <button
+          className="w-10 h-8 flex flex-col justify-between z-50 relative md:hidden"
+          onClick={() => setOpen((prev) => !prev)}
+        >
+          <motion.div
+            variants={topLine}
+            animate={open ? "opened" : "closed"}
+            className="w-10 h-1 bg-black rounded origin-left"
+          ></motion.div>
+          <motion.div
+            variants={centerLine}
+            animate={open ? "opened" : "closed"}
+            className="w-10 h-1 bg-black rounded"
+          ></motion.div>
+          <motion.div
+            variants={bottomLine}
+            animate={open ? "opened" : "closed"}
+            className="w-10 h-1 bg-black rounded origin-left"
+          ></motion.div>
+        </button>
         </div>
         <div className="sm:w-full h-full align-middle">
           <Link href="/">
